@@ -1,0 +1,12 @@
+<?php
+               include 'conexioncrud.php';
+               $hoy= date('d-m-Y');
+               $verificar = mysqli_query($mysqli, "SELECT mensaje, correo, Fecha_cita FROM paciente WHERE Fecha_cita='$hoy' ") or die(mysqli_error());
+               while($row = mysqli_fetch_assoc($verificar))
+               {
+               $correo = $row['correo'];
+               $mensaje = $row['mensaje'];
+               $fecha_cita= $row['Fecha_cita'];
+               }
+               
+              ?>
